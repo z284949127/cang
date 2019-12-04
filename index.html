@@ -1,1 +1,57 @@
-hellocang
+<html>
+  <head>
+  <meta charset="utf-8"/>
+  <title>七陌网络收藏夹</title>
+    <script src="https://cdn.bootcss.com/babel-standalone/7.0.0-beta.3/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/16.10.2/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.10.2/umd/react-dom.production.min.js"></script>
+  </head>
+  <body>
+    <div id="message1">
+      个人网络收藏夹，兼容常用浏览器收藏夹导入。<br/>
+      记住本站网址：https://cang.7mo.org/<br/>
+      或者按[ctrl + D] 保存到浏览器收藏夹。<br/>
+    </div>
+    
+    <script type="text/babel">
+     App extends React.Component {
+       /*props属性,用于传递参数,它具有只读性,不可赋值*/
+       constructor(props) {
+         console.log('App', 'constructor...');
+         super(props);
+         /*react的状态机,变动刷新组件内容*/
+         this.state = {
+         };
+         this.name = 'App';
+       }
+   
+       /*点击菜单*/
+       handleClick = e => {
+         console.log('click ', e);
+       };
+   
+       /*第一次渲染后调用*/
+       async componentDidMount() {
+         const {name} = this;
+         console.log(name, 'componentDidMount...');
+         // 登录检测
+       }
+   
+       /*渲染*/
+       render() {
+       
+         return (
+           <div>
+             欢迎使用网络收藏夹！
+           </div>
+         );
+       }
+   
+     }
+   
+     ReactDOM.render(
+       <App/>
+       , document.getElementById('message1'));
+    </script>
+  </body>
+</html>
